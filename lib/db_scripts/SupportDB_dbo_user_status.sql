@@ -1,0 +1,1 @@
+INSERT INTO dbo.user_status (id, status_type_id, user_id, inserted_at, updated_at) VALUES ('02ecdc39-4928-46a5-b77a-8666fe31c8a6', 2, '1c81192b-1071-44be-b1ae-19d302e0866d', '2021-07-12 18:05:16.000000', '2021-07-12 18:05:16.000000');

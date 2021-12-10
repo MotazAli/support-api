@@ -1,0 +1,53 @@
+to deploy to gigalixir 
+
+1- download gigalixir cli so you can use gigalixir commands from CMD
+
+2- create account in gigalixir from the gigalixir website
+
+3- create app from gigalixir website using your account 
+( the name of the app that will be your domain name 
+for exaple i create app name "sender-support-dev" 
+and i can open it in the browser using that link https://sender-support-dev.gigalixirapp.com/  
+while will gigalixir automatic create that link from your app name "https://{app-name}.gigalixirapp.com/" )
+
+
+4- create your database and login it using the cradintial inside the gigalixir website dashboard
+and create your tabels 
+
+5- change database config in the dev.exs with the database cradintial that you created in gigalixir
+
+6- add file name it ( elixir_buildpack.config ) in the root of your project
+and add inside it that configration 
+
+elixir_buildpack.config inside file
+===============================
+erlang_version=23.3.2
+elixir_version=1.12.2
+always_rebuild=false
+release=false
+runtime_path=/app
+===============================
+
+7- add another file name it ( phoenix_static_buildpack.config ) in the root of your project
+and add inside it that configration 
+
+phoenix_static_buildpack.config inside file
+===============================
+node_version=14.15.4
+===============================
+
+8- commit all your files and project in the master or main repository
+and switch or checkout to the master or main origin branch
+beccause gigalixir only read from the master or main branch
+
+9- create repository inside gigalixir using your app name 
+with that command: 
+gigalixir git:remote {app-name}
+
+for example 
+gigalixir git:remote sender-support-dev
+
+
+10- inside the terminal of your project puch your project to gigalixir
+repository taht you create  using that command:
+git push gigalixir 

@@ -1,0 +1,44 @@
+1- build the docker file with the tag name => the command
+docker builg -t {dockerhub/image_name} .
+
+for exmple => command
+docker build -t motaaz/support-service-dev .
+
+2- push that image to your docker registery repository => the command
+docker push {dockerhub/image_name}
+
+for example  => command
+docker push motaaz/support-service-dev
+
+3- go to the hosting that having the docker and login to docker =>
+docker login
+
+4- remove the old image if you have one provious => command 
+docker rmi {image_name}
+
+for example => command
+docker rmi motaaz/support-service-dev
+
+5- down the existing container working if you have one provious, 
+by the docker compose old file if you have one provious => command 
+docker-compose -f {docker compose file name} down
+
+for example => command
+docker-compose -f support-service.yml down
+
+6- create docker compose file if you dont have and add that configration on it
+=======================
+version: "3.9"
+services:
+  phoenix_support_service:
+    # build: .
+    image: motaaz/support-service-dev:latest
+    ports:
+      - "80:5000"
+======================= 
+
+7- run the docker compose file => command 
+docker-compose -f {docker compose file name} up -d
+
+for example => 
+docker-compose -f support-service.yml up -d

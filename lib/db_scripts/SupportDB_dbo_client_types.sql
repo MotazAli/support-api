@@ -1,0 +1,2 @@
+INSERT INTO dbo.client_types (id, type, arabic_type, inserted_at, updated_at) VALUES (1, 'Captain', 'كابتن', null, null);
+INSERT INTO dbo.client_types (id, type, arabic_type, inserted_at, updated_at) VALUES (2, 'Agent', 'مالك متجر', null, null);
